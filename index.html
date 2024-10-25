@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,9 +8,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
-  
 </head>
-
 <body class="bg-dark">
   <main>
     <div class="text-center container">
@@ -19,14 +16,12 @@
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light"><img src="img/japflix.png" alt=""></h1>
           <input type="search" class="form-control" name="buscar" id="inputBuscar" placeholder="Ej.: The Lion King">
-          <button class="btn btn-primary m-2" id="btnBuscar">Buscar</button>
+          <button class="btn btn-primary m-2" id="btnBuscar">Search</button>
         </div>
       </div>
     </div>
-
     <div class="album">
-      <ul class="list-group container" id="lista">
-      </ul>
+      <ul class="list-group container" id="lista"></ul>
     </div>
   </main>
 
@@ -41,8 +36,32 @@
     </div>
   </footer>
 
+  <!-- Modal -->
+  <div class="modal fade" id="movieDetailsModal" tabindex="-1" aria-labelledby="movieDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title" id="movieDetailsModalLabel"></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Description</h4>
+          <p id="movieOverview"></p>
+          <h5>Genres</h5>
+          <ul id="movieGenres"></ul>
+          <!-- Botón con desplegable -->
+          <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Additional Information
+            </button>
+            <ul class="dropdown-menu bg-dark text-light" aria-labelledby="dropdownMenuButton" id="movieDetailsDropdown"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/bootstrap.bundle.min.js"></script>
-
+  <script src="js/script.js"></script>
 </body>
-
 </html>
